@@ -28,6 +28,7 @@ from fh_plotly import plotly_headers, plotly2fasthtml
 # )
 app = FastHTML(hdrs=plotly_headers)
 
+
 @app.get("/")
 def home():
     slider_input = Input(
@@ -38,7 +39,7 @@ def home():
         class_="slider",
         id="myRange",
     )
-    
+
     response = requests.get(
         "http://localhost:8080/users", params={"limit": 100, "offset": 0}
     )
@@ -60,10 +61,14 @@ def home():
         nbins=1000,
         color_discrete_sequence=["#636EFA", "#EF553B"],
     )
-    
+
     return (
-        Div(H1("E commerce Dashboard"), P("Welcome to the E commerce Dashboard")),
-        Div(Style(
+        Div(
+            H1("E commerce Dashboard"),
+            P("Welcome to the E commerce Dashboard"),
+        ),
+        Div(
+            Style(
                 """
                     #mydiv {
                         height: 400px;
@@ -120,7 +125,8 @@ def home():
                     for user in data
                 ]
             ),
-        id="mydiv"),
+            id="mydiv",
+        ),
         plotly2fasthtml(pie_fig),
         plotly2fasthtml(density_fig),
     )

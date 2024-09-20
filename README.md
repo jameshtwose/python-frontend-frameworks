@@ -10,19 +10,26 @@ Tested on a 2018 Mac Mini using python3.12
 ### Running and loading data
 - `docker compose up -d`
 
+### Pgadmin connection settings
+- host: docker.for.mac.host.internal
+- port: 5433
+- user: postgres
+- password: changeme
+- database: postgres
+- schema: public
+
 ### Dashboard specific frameworks
-- Streamlit
-- Panel
+- Streamlit - DONE
+- Panel - Half done
 - Dash
-- Taipy
-- Superset
-- Shiny
-- Bokeh
-- Bowtie
+- Taipy -
+- Shiny - DONE
+- Bokeh - Not doing (more of a plotting library)
+- Bowtie (No longer maintained) - Attempted to run but failed
 
 ### General purpose frameworks
-- Fasthtml
+- Fasthtml - DONE
 - Reactpy
 - Flet
 - Nicegui
-- Mesop
+- Mesop - DONE

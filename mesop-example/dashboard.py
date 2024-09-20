@@ -26,11 +26,14 @@ def on_value_change(event: me.SliderValueChangeEvent):
     state.slider_value = event.value
     state.initial_input_value = str(state.slider_value)
 
+
 @me.page(path="/")
 def app():
     state = me.state(State)
-    me.html('<header><script src="https://cdn.plot.ly/plotly-latest.min.js"></script></header>',
-            mode="sandboxed")
+    me.html(
+        '<header><script src="https://cdn.plot.ly/plotly-latest.min.js"></script></header>',
+        mode="sandboxed",
+    )
     me.html("<h1>E-commerce Dashboard</h1>")
     me.html("<h2>Load data</h2>")
     me.text("Number of records")
